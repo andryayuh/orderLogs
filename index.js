@@ -4,7 +4,7 @@ const LogSource = require('./lib/log-source')
 const Printer = require('./lib/printer')
 
 // You can adjust this variable to see how your solutions perform under various "load"
-const sourceCount = 100
+const sourceCount = 10;
 
 /**
  * Challenge Number 1!
@@ -40,6 +40,7 @@ require('./solution/sync-sorted-merge')(syncLogSources, new Printer())
  * has only one method: popAsync() which returns a promise that resolves with a LogEntry,
  * or boolean false once the LogSource has ended.
  */
+console.log('----%%%%%%%%%%%% SEPARATOR %%%%%%%%%%%%%%----');
 
 const asyncLogSources = []
 for (let i = 0; i < sourceCount; i++) {

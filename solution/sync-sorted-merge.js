@@ -6,8 +6,7 @@ module.exports = (logSources, printer) => {
   for (var i = 0; i < logSources.length; i++) {
     while (!logSources[i].drained) {
       var test = logSources[i].pop();
-      // dont push if pop returns false
-      if (!!test) {
+      if (test) {
         merged.push(test);
       }
     }
@@ -15,7 +14,7 @@ module.exports = (logSources, printer) => {
   merged.sort((a, b) => {
     return a.date - b.date;
   });
-  
+
   for (var i = 0; i < merged.length; i++) {
     printer.print(merged[i]);
   }
